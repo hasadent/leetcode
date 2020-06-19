@@ -20,7 +20,7 @@ class Solution:
 def test(l):
 
     rr = sorted(l)
-    
+
     s = Solution()
     s.sortColors(l)
 

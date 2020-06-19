@@ -8,7 +8,7 @@ class ListNode:
             return str(self.next) + str(self.val)
         else:
             return str(self.val)
-        
+
 
 class Solution:
     def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
@@ -19,7 +19,7 @@ class Solution:
         while l1 and l2:
             l1.val += l2.val + c
 
-            c = 0            
+            c = 0
             if l1.val >= 10:
                 l1.val -= 10
                 c = 1

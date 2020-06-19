@@ -13,7 +13,7 @@ class ListNode:
             s += '->' + str(n.val)
             n = n.next
         return s
-    
+
     def valid(self):
         c = self
         while c.next:
@@ -26,7 +26,7 @@ class Solution:
     def mergeKLists(self, lists: List[ListNode]) -> ListNode:
         if len(lists) == 1:
             return lists[0]
-        
+
         ret = cur = ListNode()
         q = []
         i = 0

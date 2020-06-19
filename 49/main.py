@@ -9,7 +9,7 @@ class Solution:
                 dic[k].append(s)
             else:
                 dic[k] = [s]
-        
+
         ret = []
         for k in dic.keys():
             ret.append(dic[k])
