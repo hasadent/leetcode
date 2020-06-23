@@ -54,15 +54,32 @@ class Solution:
         return res
 
 
+    def inorderTraversal(self, root: TreeNode) -> List[int]:
+        res = []
+        stack = []
+
+        n = root
+        while len(stack) != 0 or n:
+            while n:
+                stack.append(n)
+                n = n.left
+
+            n = stack.pop()
+            res.append(n.val)
+            n = n.right
+        return res
+
 def test(root, ans):
     s = Solution()
 
+    r = s.inorderTraversal(root)
+    print('in     %s' % r)
+
     r = s.preorderTraversal(root)
-    print('pre %s' % r)
+    print('pre    %s' % r)
 
     r = s.postorderTraversal(root)
-    print('post %s' % r)
-
+    print('post   %s' % r)
 
 root = TreeNode(1, None, TreeNode(2, TreeNode(3)))
 test(root, None)
@@ -73,4 +90,6 @@ root = TreeNode(3, TreeNode(1), TreeNode(2))
 test(root, None)
 
 
+root = TreeNode(1, TreeNode(2, None, TreeNode(4)), TreeNode(3, TreeNode(5)))
+test(root, None)
 
