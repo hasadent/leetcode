@@ -17,6 +17,14 @@ class TreeNode:
         s += ' ] '
         return s
 
+    def __eq__(self, other):
+        if not other:
+            return False
+
+        return self.val == other.val and \
+            self.left == other.left and \
+            self.right == other.right
+
     @staticmethod
     def fromList(array):
         if len(array) == 0:
@@ -49,13 +57,12 @@ class TreeNode:
             ident, n = queue.pop(0)
 
             s = ' ' * ident
-            if n == self:
-                s += 'o %3d' % n.val
-                ident += 5
+            if id(n) == id(self):
+                s += 'Tree: %3d' % n.val
+                ident += 9
             else:
                 s += ' `-> %3d' % n.val
                 ident += 8
-
 
             if n.right:
                 queue.append((ident, n.right))
@@ -65,11 +72,10 @@ class TreeNode:
                 s += ' --> %3d' % nn.val
                 ident += 8
                 if nn.right:
-                    queue.append((ident, n.right))
+                    queue.append((ident, nn.right))
                 nn = nn.left
 
             print(s)
-
 
 if __name__ == '__main__':
     tree = TreeNode.fromList([3,9,20,None,None,15,7])
