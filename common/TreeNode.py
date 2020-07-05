@@ -71,7 +71,7 @@ class TreeNode:
         queue = [ (ident, self) ]
 
         while queue:
-            ident, n = queue.pop(0)
+            ident, n = queue.pop()
 
             s = ' ' * ident
             if id(n) == id(self):
