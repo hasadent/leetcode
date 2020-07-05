@@ -7,52 +7,69 @@ class TreeNode:
         self.right = right
 
     def __str__(self):
-        s = ' [ ' + str(self.val)
-
-        if self.left:
-            s += str(self.left)
-
-        if self.right:
-            s += str(self.right)
-        s += ' ] '
-        return s
+        return str(self.toList())
 
     def __eq__(self, other):
-        if not other:
+        if not other or type(other) != TreeNode:
             return False
 
         return self.val == other.val and \
             self.left == other.left and \
             self.right == other.right
 
-    @staticmethod
-    def fromList(array):
-        if len(array) == 0:
-            return None
+    def toList(self) -> List:
+        root = self
+        if not root:
+            return []
 
-        v = array.pop(0) 
-        r = TreeNode(v)
-        queue = [r]
-        while len(array) > 0:
+        res, queue = [root.val], [root]
+        while queue:
             n = queue.pop(0)
 
-            v = array.pop(0)
-            if v:
+            lv = rv = None
+
+            if n.left:
+                queue.append(n.left)
+                lv = n.left.val
+
+            if n.right:
+                queue.append(n.right)
+                rv = n.right.val
+
+            res.append(lv)
+            res.append(rv)
+
+        while res and res[-1] == None:
+            res.pop()
+
+        return res
+
+    @staticmethod
+    def fromList(data):
+        if len(data) == 0:
+            return None
+
+        root, i = TreeNode(data[0]), 1
+        queue = [root]
+        while i < len(data):
+            n = queue.pop(0)
+
+            v, i = data[i], i + 1
+            if v != None:
                 n.left = TreeNode(v)
                 queue.append(n.left)
 
-            if array:
-                v = array.pop(0)
-                if v:
+            if i < len(data):
+                v, i = data[i], i + 1
+                if v != None:
                     n.right = TreeNode(v)
                     queue.append(n.right)
 
-        return r
+        return root
 
-    def printTree(self):
-        ident = [ 0 ]
-        queue = [ (0, self) ]
-        
+    def printTree(self, ident: int = 0):
+        queue = [ (ident, self) ]
+
         while queue:
             ident, n = queue.pop(0)
 
