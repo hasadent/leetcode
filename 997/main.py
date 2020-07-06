@@ -9,7 +9,7 @@ class Solution:
         for t in trust:
             tee[t[0]] += 1
             ted[t[1]] += 1
-        
+
         i = 1
         while i < N:
             if tee[i] == 0 and ted[i] == (N - 2):

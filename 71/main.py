@@ -14,7 +14,7 @@ class Solution:
         if len(stack) == 1:
             return '/'
         return '/'.join(stack)
-       
+
 
 def test(path, ans):
     s = Solution()

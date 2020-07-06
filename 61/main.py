@@ -30,7 +30,7 @@ class Solution:
     def rotateRight(self, head: ListNode, k: int) -> ListNode:
         if not head or not head.next:
             return head
-        
+
         c = 1
         t = head
         n = head.next
@@ -65,7 +65,7 @@ def test(head, k, ans):
         print('not correct: %d %s %s' % (k, r, ans))
 
 
-test([1,2,3,4,5], 2, [4,5,1,2,3]) 
+test([1,2,3,4,5], 2, [4,5,1,2,3])
 test([0,1,2], 4, [2,0,1])
 test([0,1,2], 6, [0,1,2])
 

@@ -10,7 +10,7 @@ class Solution:
 
         v = preorder.pop(0)
         x = inorder.index(v)
-        l = self.buildTree(preorder, inorder[0:x]) 
+        l = self.buildTree(preorder, inorder[0:x])
         r = self.buildTree(preorder, inorder[x+1:])
         return TreeNode(v, l, r)
 

@@ -15,7 +15,7 @@ def test(n, ans):
 
     if r != ans:
         print('%d -> %x: %d %d' % (n, n, r, ans))
-            
+
 
 
 test(0, 0)

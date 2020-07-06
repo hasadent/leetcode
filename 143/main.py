@@ -20,7 +20,7 @@ class ListNode:
         return s
 
     def __eq__(self, other):
-        
+
         if self.val != other.val:
             return False
         return self.next == other.next
@@ -44,7 +44,7 @@ class Solution:
         h = head
         while count > 0:
             n = stack.pop()
-            
+
             n.next = h.next
             h.next = n
             h = h.next.next

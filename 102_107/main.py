@@ -33,7 +33,7 @@ class Solution:
                     next_lv_q.append(n.left)
                 if n.right:
                     next_lv_q.append(n.right)
-            
+
             res.append(cur)
             queue = next_lv_q
         return res

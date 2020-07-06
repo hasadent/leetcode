@@ -5,7 +5,7 @@ class Solution:
         s = len(nums)
         if s == 1 or nums[0] < nums[-1]:
             return nums[0]
-        
+
         b = s - 1
         v = 0
         while (v+1) < s and nums[v] <= nums[v+1]:

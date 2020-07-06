@@ -24,7 +24,7 @@ class Solution:
                 continue
 
             new = getEquivalent(v,v0)
-            old = getEquivalent(v,v1)    
+            old = getEquivalent(v,v1)
             if old != new:
                 for k in v.keys():
                     if v[k] == old:
@@ -38,7 +38,7 @@ class Solution:
             if not v1 in v:
                 v[v1] = v1
                 continue
-            
+
             eval_eq = getEquivalent(v, v0) != getEquivalent(v,v1)
             if not eval_eq:
                 return False

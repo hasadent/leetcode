@@ -10,7 +10,7 @@ class Solution:
                 break
             i += 1
         return target in matrix[i-1]
-        
+
 
 
 def test(matrix, target, ans):

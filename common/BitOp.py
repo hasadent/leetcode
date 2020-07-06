@@ -31,7 +31,7 @@ def run():
     for i in range(1, 20000):
         fls_1(i)
     print("--- %s seconds ---" % (time.time() - start_time))
-    
+
     start_time = time.time()
     for i in range(1, 20000):
         fls(i)

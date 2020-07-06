@@ -9,7 +9,7 @@ class Solution:
 
         ls1 += 1
         ls2 += 1
-        
+
         dp = [ [0] * (ls1) for _ in range(ls2) ]
         dp[0][0] = 1
 

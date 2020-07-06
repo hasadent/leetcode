@@ -11,7 +11,7 @@ class Solution:
         v = postorder.pop()
         x = inorder.index(v)
         r = self.buildTree(inorder[x+1:], postorder)
-        l = self.buildTree(inorder[0:x], postorder) 
+        l = self.buildTree(inorder[0:x], postorder)
         return TreeNode(v, l, r)
 
 
