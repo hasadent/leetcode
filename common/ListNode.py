@@ -24,7 +24,7 @@ class ListNode:
                 return False
             s = s.next
             o = o.next
-        return s == None
+        return o == None
 
     @staticmethod
     def fromList(array: List):
@@ -51,4 +51,5 @@ if  __name__ == '__main__':
     assert (ListNode.fromList([1,2,3]) == ListNode.fromList([1,2])) == False
     assert (ListNode.fromList([1,2,3]) == None) == False
     assert (None == ListNode.fromList([1,2,3])) == False
+    assert (ListNode.fromList([1,2]) == ListNode.fromList([1,2,3])) == False
 
